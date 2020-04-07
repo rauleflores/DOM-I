@@ -42,6 +42,16 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // nav
+let nav = document.querySelector('nav');
+let navOption1 = document.createElement('a');
+let navOption1A = document.createTextNode('Blog');
+let navOption2 = document.createElement('a');
+let navOption2B = document.createTextNode('Legal');
+navOption1.prepend(navOption1A);
+nav.appendChild(navOption1);
+navOption2.prepend(navOption2B);
+nav.appendChild(navOption2);
+
 let navItems = nav.querySelectorAll('a');
 navItems[0].textContent = siteContent['nav']['nav-item-1']
 navItems[0].style.color = 'green';
@@ -55,6 +65,8 @@ navItems[4].textContent = siteContent['nav']['nav-item-5']
 navItems[4].style.color = 'green';
 navItems[5].textContent = siteContent['nav']['nav-item-6']
 navItems[5].style.color = 'green';
+navItems[6].style.color = 'green';
+navItems[7].style.color = 'green';
 
 // cta
 let ctaH1 = document.querySelector('h1')
