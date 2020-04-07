@@ -127,6 +127,111 @@ txtCont[4].style.textAlign = "center";
 let midImg = document.getElementById('middle-img');
 midImg.src = siteContent['main-content']['middle-img-src']
 
+const mainSection = document.getElementById('mainContent')
+//console.log(mainSection);
+
+
+
+let sectionCloner = document.createElement('button');
+sectionCloner.style.border = '1px double black';
+sectionCloner.style.color ="darkblue";
+sectionCloner.style.fontSize = '16px';
+sectionCloner.style.backgroundColor = 'white';
+sectionCloner.style.width = '170px';
+sectionCloner.style.height = '35px';
+sectionCloner.style.marginTop = '30px';
+sectionCloner.style.marginBottom ='60px';
+sectionCloner.style.marginLeft = "40%";
+sectionCloner.style.cursor = "pointer";
+sectionCloner.addEventListener('mouseenter', event => {
+  event.target.style.backgroundColor = "black";
+  event.target.style.color = "white";
+  setTimeout( () => {
+    event.target.style.backgroundColor = "initial";
+    event.target.style.color = "darkblue";
+  }, 500)
+})
+sectionCloner.onclick = function () {
+
+  let newDivCont = document.createElement('div');
+  newDivCont.className = 'clone-content';
+  let newDiv = document.createElement('div');
+  newDiv.className = 'text-content';
+  let newDivElem1 = document.createElement('h4');
+  newDiv.prepend(newDivElem1);
+  let newDivElem1Text = document.createTextNode('Features');
+  newDivElem1.prepend(newDivElem1Text);
+  let newDivElem2 = document.createElement('p');
+  newDiv.appendChild(newDivElem2);
+  let newDivElem2Text = document.createTextNode('Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.')
+  newDivElem2.prepend(newDivElem2Text);
+  document.getElementById('mainContent').appendChild(newDiv);
+  newDivCont.prepend(newDiv);
+
+  let newDivCont2 = document.createElement('div');
+  newDivCont2.className = 'clone-content';
+  let newDiv2 = document.createElement('div');
+  newDiv2.className = 'text-content';
+  let newDivElem3 = document.createElement('h4');
+  newDiv2.prepend(newDivElem3);
+  let newDivElem3Text = document.createTextNode('About');
+  newDivElem3.prepend(newDivElem3Text);
+  let newDivElem4 = document.createElement('p');
+  newDiv2.appendChild(newDivElem4);
+  let newDivElem4Text = document.createTextNode('About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.')
+  newDivElem4.prepend(newDivElem4Text);
+  document.getElementById('mainContent').appendChild(newDiv2);
+  newDivCont2.prepend(newDiv2);
+  console.log(newDivCont2)
+ }
+
+
+  let newDivCont = document.createElement('div');
+  newDivCont.className = 'clone-content';
+  let newDiv = document.createElement('div');
+  newDiv.className = 'text-content';
+  let newDivElem1 = document.createElement('h4');
+  newDiv.prepend(newDivElem1);
+  let newDivElem1Text = document.createTextNode('Features');
+  newDivElem1.prepend(newDivElem1Text);
+  let newDivElem2 = document.createElement('p');
+  newDiv.appendChild(newDivElem2);
+  let newDivElem2Text = document.createTextNode('Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.')
+  newDivElem2.prepend(newDivElem2Text);
+  document.getElementById('mainContent').appendChild(newDiv);
+  newDivCont.prepend(newDiv);
+  console.log(newDivCont)
+
+
+  let newDivCont2 = document.createElement('div');
+  newDivCont2.className = 'clone-content';
+  let newDiv2 = document.createElement('div');
+  newDiv2.className = 'text-content';
+  let newDivElem3 = document.createElement('h4');
+  newDiv2.prepend(newDivElem3);
+  let newDivElem3Text = document.createTextNode('About');
+  newDivElem3.prepend(newDivElem3Text);
+  let newDivElem4 = document.createElement('p');
+  newDiv2.appendChild(newDivElem4);
+  let newDivElem4Text = document.createTextNode('About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.')
+  newDivElem4.prepend(newDivElem4Text);
+  document.getElementById('mainContent').appendChild(newDiv2);
+  newDivCont2.prepend(newDiv2);
+  console.log(newDivCont2)
+
+  const newDiv3 = newDiv + newDiv2;
+
+
+
+
+let sectionClonerText = document.createTextNode('Clone sections.');
+sectionCloner.prepend(sectionClonerText);
+mainSection.prepend(sectionCloner)
+//console.log(sectionClonerText);
+
+document.getElementById('topContent').style.borderTop = "2px solid black"
+document.getElementById('topContent').style.paddingTop = "50px"
+
 // contact
 let contact = document.querySelector('.contact');
 
@@ -150,3 +255,4 @@ contactP[2].style.textAlign = 'center';
 let footer = document.getElementsByTagName('footer')
 footer[0].querySelector('p').textContent = siteContent['footer']['copyright']
 footer[0].style.color = "purple";
+footer[0].style.textAlign = 'center';
