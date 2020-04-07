@@ -38,10 +38,10 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"]);
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-// nav
+// header
 let nav = document.querySelector('nav');
 let navOption1 = document.createElement('a');
 let navOption1A = document.createTextNode('Blog');
@@ -68,15 +68,37 @@ navItems[5].style.color = 'green';
 navItems[6].style.color = 'green';
 navItems[7].style.color = 'green';
 
+let logo = document.getElementById("logo-img");
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+logo.addEventListener('mouseenter', function(event){
+  event.target.style.display = "none";
+
+  setTimeout( function() {
+    event.target.style.display = "initial"
+  }, 1000);
+
+}, false);
+
 // cta
 let ctaH1 = document.querySelector('h1')
 ctaH1.textContent = siteContent['cta']['h1']
+ctaH1.style.color ='green';
+
 
 let ctaButton = document.querySelector('button');
-ctaButton.textContent = siteContent['cta']['button']
+ctaButton.textContent = siteContent['cta']['button'];
+ctaButton.style.color = 'darkblue';
 
 let ctaImg = document.getElementById('cta-img');
 ctaImg.src = siteContent['cta']['img-src']
+ctaImg.addEventListener('mouseenter', function(event) {
+  event.target.style.display = "none";
+
+  setTimeout( () => {
+    event.target.style.display = "initial"
+  }, 500);
+}, false);
+
 
 
 // main content
@@ -91,6 +113,16 @@ txtCont[3].querySelector('h4').textContent = siteContent['main-content']['produc
 txtCont[3].querySelector('p').textContent = siteContent['main-content']['product-content']
 txtCont[4].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
 txtCont[4].querySelector('p').textContent = siteContent['main-content']['vision-content']
+txtCont[0].style.color = "red";
+txtCont[1].style.color = "blue";
+txtCont[2].style.color = "green";
+txtCont[3].style.color = "purple";
+txtCont[4].style.color = "orange";
+txtCont[0].style.textAlign = "center";
+txtCont[1].style.textAlign = "center";
+txtCont[2].style.textAlign = "center";
+txtCont[3].style.textAlign = "center";
+txtCont[4].style.textAlign = "center";
 
 let midImg = document.getElementById('middle-img');
 midImg.src = siteContent['main-content']['middle-img-src']
@@ -100,12 +132,21 @@ let contact = document.querySelector('.contact');
 
 let contactH4 = contact.querySelector('h4')
 contactH4.textContent = siteContent['contact']['contact-h4']
+contactH4.style.color = "orange";
+contactH4.style.textAlign = "center";
 
 let contactP = contact.querySelectorAll('p');
 contactP[0].textContent = siteContent['contact']['address']
 contactP[1].textContent = siteContent['contact']['phone']
 contactP[2].textContent = siteContent['contact']['email']
+contactP[0].style.color = "red";
+contactP[1].style.color = "red";
+contactP[2].style.color = "red";
+contactP[0].style.textAlign = 'center';
+contactP[1].style.textAlign = 'center';
+contactP[2].style.textAlign = 'center';
 
 // footer
 let footer = document.getElementsByTagName('footer')
 footer[0].querySelector('p').textContent = siteContent['footer']['copyright']
+footer[0].style.color = "purple";
